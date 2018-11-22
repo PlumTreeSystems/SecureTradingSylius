@@ -3,7 +3,7 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="pts_sylius_st_plugin.form.type.plumtreesystems_gateway_configuration" class="PlumTreeSystems\SyliusSecureTradingPlugin\Form\Type\SecureTradingGatewayConfigurationType">
-            <tag name="sylius.gateway_configuration_type" type="plumtreesystems_securetrading" label="test"/>
+            <tag name="sylius.gateway_configuration_type" type="plumtreesystems_securetrading" label="Secure Trading"/>
             <tag name="form.type"/>
         </service>
     </services>
