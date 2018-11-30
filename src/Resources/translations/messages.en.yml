@@ -1,0 +1,7 @@
+plumtreesystems:
+  form:
+    gateway_configuration:
+      secure_trading:
+        username: 'Webservice username'
+        password: 'Webservice password'
+        site_reference: 'Site reference'

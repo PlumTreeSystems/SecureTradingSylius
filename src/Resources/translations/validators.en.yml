@@ -1,0 +1,10 @@
+plumtreesystems:
+  form:
+    gateway_configuration:
+      secure_trading:
+        username:
+          not_blank: 'Webservice username cannot be blank'
+        password:
+          not_blank: 'Webservice password cannot be blank'
+        site_reference:
+          not_blank: 'Site reference cannot be blank'
