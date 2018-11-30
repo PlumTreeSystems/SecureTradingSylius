@@ -2,6 +2,8 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-
+        <service id="pts_sylius_st_plugin.action.convert_payment" class="PlumTreeSystems\SyliusSecureTradingPlugin\Action\ConvertPaymentAction">
+            <tag name="payum.action" factory="plumtreesystems_securetrading" alias="payum.action.convert_payment"/>
+        </service>
     </services>
 </container>
