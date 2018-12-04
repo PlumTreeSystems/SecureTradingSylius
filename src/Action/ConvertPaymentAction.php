@@ -31,10 +31,84 @@ final class ConvertPaymentAction implements ActionInterface
         /** @var OrderInterface $order */
         $order = $payment->getOrder();
 
-        $details = [];
+        $details = $this->preparePaymentDetailsFields($order);
 
-        throw new \LogicException('Not implemented Sylius!');
-//        $request->setResult($details);
+//        throw new \LogicException('Not implemented Sylius!');
+        $request->setResult($details);
+    }
+
+    private function checkCacheToken()
+    {
+
+    }
+
+    private function prepareOperationFields()
+    {
+        $required = [
+            'requesttypedescriptions' => '',
+            'sitereference' => '',
+            'accounttypedescription' => '',
+        ];
+
+        $optional = [
+            'parenttransactionreference' => '',
+            'authmethod' => '',
+            'credentialsonfile' => 0,
+            'initiationreason' => 'A'
+        ];
+        return array_merge($required);
+    }
+
+    private function preparePaymentDetailsFields(PaymentInterface $payment, OrderInterface $order)
+    {
+        $required = [
+            'currencyiso3a' => $payment->getCurrencyCode(),
+            'baseamount' => $order->getTotal()
+        ];
+        return $required;
+    }
+
+    private function prepareMerchantDetailsFields()
+    {
+        $optional = [
+            'merchantemail' => '',
+            'orderreference' => '',
+            'chargedescription' => '',
+            'operatorname' => ''
+        ];
+        return $optional;
+    }
+
+    private function prepareCustomerDeliveryFields()
+    {
+        $optional = [
+            'customerpremise' => '',
+            'customerstree' => '',
+            'customertown' => '',
+            'customercounty' => '',
+            'customercountryiso2a' => 'GB',
+            'customerpostcode' => '',
+            'customeremail' => '',
+            'customertelephonetype' => '',
+            'customertelephone' => '',
+            'customerprefixname' => '',
+            'customerfirstname' => '',
+            'customermiddlename' => '',
+            'customerlastname' => '',
+            'customersuffixname' => '',
+            'customerforwardedip' => '',
+            'customerip' => ''
+        ];
+        return $optional;
+    }
+
+    private function prepareSettlementFields()
+    {
+        $optional = [
+            'settleduedate' => '',
+            'settlestatus' => ''
+        ];
+        return $optional;
     }
 
     /**
@@ -47,15 +121,5 @@ final class ConvertPaymentAction implements ActionInterface
             $request->getSource() instanceof PaymentInterface &&
             $request->getTo() === 'array'
             ;
-    }
-
-    /**
-     * @param int $price
-     *
-     * @return float
-     */
-    private function formatPrice(int $price): float
-    {
-        return round($price / 100, 2);
     }
 }
