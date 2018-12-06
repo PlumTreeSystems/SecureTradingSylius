@@ -31,7 +31,7 @@ final class ConvertPaymentAction implements ActionInterface
         /** @var OrderInterface $order */
         $order = $payment->getOrder();
 
-        $details = $this->preparePaymentDetailsFields($order);
+        $details = $this->preparePaymentDetailsFields($payment, $order);
 
 //        throw new \LogicException('Not implemented Sylius!');
         $request->setResult($details);
