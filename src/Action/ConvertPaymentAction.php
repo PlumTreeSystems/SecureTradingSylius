@@ -63,7 +63,7 @@ final class ConvertPaymentAction implements ActionInterface
     {
         $required = [
             'currencyiso3a' => $payment->getCurrencyCode(),
-            'baseamount' => $order->getTotal()
+            'baseamount' => (string) $order->getTotal()
         ];
         return $required;
     }
