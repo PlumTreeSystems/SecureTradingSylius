@@ -37,11 +37,6 @@ final class ConvertPaymentAction implements ActionInterface
         $request->setResult($details);
     }
 
-    private function checkCacheToken()
-    {
-
-    }
-
     private function prepareOperationFields()
     {
         $required = [
