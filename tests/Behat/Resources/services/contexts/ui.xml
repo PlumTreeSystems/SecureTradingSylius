@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="pts_sylius.context.ui.admin.managing_payment_methods" class="Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodsContext">
+            <argument type="service" id="sylius.behat.page.admin.payment_method.create" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="pts_sylius.context.ui.extended.page" class="Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Context\Ui\ExtendedPageContext">
+            <argument>%__behat__.mink.parameters%</argument>
+            <tag name="fob.context_service" />
+        </service>
+    </services>
+</container>
