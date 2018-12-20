@@ -8,7 +8,7 @@
     Given the store operates on a channel named "US" in "USD" currency
     And I am logged in as an administrator
 
-  @ui
+  @ui @mink:chrome
   Scenario: Adding a new secure trading payment method
     Given I want to create a new Secure Trading payment method
     When I fill in "Code" with "secure"
