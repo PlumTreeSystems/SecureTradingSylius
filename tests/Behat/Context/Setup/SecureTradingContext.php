@@ -69,7 +69,7 @@ class SecureTradingContext implements Context
         $paymentMethod = $this->createPaymentMethodSecureTrading(
             $paymentMethodName,
             $paymentMethodCode,
-            'secure_trading',
+            'plumtreesystems_securetrading',
             'Secure Trading'
         );
         $paymentMethod->getGatewayConfig()->setConfig([
