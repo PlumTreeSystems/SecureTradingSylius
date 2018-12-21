@@ -2,3 +2,6 @@ framework:
     test: ~
     session:
         storage_id: session.storage.mock_file
+
+plum_tree_systems_sylius_secure_trading:
+    test_mode: true

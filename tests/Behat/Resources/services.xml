@@ -6,6 +6,8 @@
         <import resource="services/contexts/ui.xml" />
     </imports>
     <services>
-
+        <service id="pts_sylius_st_plugin.mocker_gateway" class="Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Mocker\SecureTradingApiGatewayMocker">
+            <argument type="service" id="sylius.behat.mocker" />
+        </service>
     </services>
 </container>

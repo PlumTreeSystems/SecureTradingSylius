@@ -1,2 +1,3 @@
 imports:
     - suites/ui/admin/managing_payment_method.yml
+    - suites/ui/shop/paying_with_secure_trading_during_checkout.yml

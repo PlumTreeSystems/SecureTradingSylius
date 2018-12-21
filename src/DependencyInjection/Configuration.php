@@ -13,7 +13,15 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('plumtreesystems_sylius_secure_trading_plugin');
+        $rootNode = $treeBuilder->root('plum_tree_systems_sylius_secure_trading');
+
+        $rootNode
+            ->children()
+                ->booleanNode('test_mode')
+                    ->defaultValue(false)
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
