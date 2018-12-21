@@ -15,6 +15,6 @@
   @ui @mink:chrome
   Scenario: Successful payment
     Given I added product "PHP T-Shirt" to the cart
-    And I have proceeded selecting "Secure" payment method
+    And I have proceeded selecting "Secure Trading" payment method
     When I confirm my order with Secure Trading payment
     Then I should be notified that my payment has been completed
