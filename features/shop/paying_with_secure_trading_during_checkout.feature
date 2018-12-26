@@ -17,4 +17,5 @@
     Given I added product "PHP T-Shirt" to the cart
     And I have proceeded selecting "Secure Trading" payment method
     When I confirm my order with Secure Trading payment
+    And I wait for confirmation
     Then I should be notified that my payment has been completed

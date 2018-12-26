@@ -11,6 +11,7 @@ namespace Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Context\Ui;
 use Behat\Behat\Context\Context;
 use Behat\Mink\Element\DocumentElement;
 use Behat\MinkExtension\Context\MinkContext;
+use Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Page\JQueryHelper;
 
 class ExtendedPageContext extends MinkContext implements Context
 {
@@ -72,5 +73,11 @@ class ExtendedPageContext extends MinkContext implements Context
         }
 
         $element->click();
+    }
+    /**
+     * @Given /^I wait for confirmation$/
+     */public function iWaitForConfirmation()
+    {
+        JQueryHelper::waitForAsynchronousActionsToFinish($this->getSession());
     }
 }

@@ -14,6 +14,7 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Sylius\Behat\Page\Shop\Checkout\CompletePageInterface;
 use Sylius\Behat\Page\Shop\Order\ShowPageInterface;
 use Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Mocker\SecureTradingApiGatewayMocker;
+use Tests\PlumTreeSystems\SyliusSecureTradingPlugin\Behat\Page\JQueryHelper;
 
 class SecureTradingShopContext implements Context
 {
